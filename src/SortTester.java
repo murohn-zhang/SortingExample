@@ -70,7 +70,7 @@ public class SortTester {
         Random rand = new Random();
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
-            arr[i] = rand.nextInt(SortingAlgorithms.MAX_NUMBER_SIZE); // Random numbers between 0 and 9999
+            arr[i] = rand.nextInt(SortingAlgorithms.MAX_NUMBER_SIZE);
         }
         return arr;
     }
