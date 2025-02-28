@@ -7,7 +7,7 @@
  */
 public class SortingAlgorithms {
     // Change this value to change testing size
-    public static final int TEST_SIZE = 10;
+    public static final int TEST_SIZE = 10000;
 
     // Change this value to change the range of numbers generated
     public static final int MAX_NUMBER_SIZE = 100;
@@ -15,16 +15,46 @@ public class SortingAlgorithms {
     // Bubble Sort
     public static void bubbleSort(int[] arr) {
         // TODO: Implement bubble sort
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < arr.length; i++) {
+            int swapCounter = 0;
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j + 1] = temp;
+                    swapCounter++;
+                }
+            }
+            if (swapCounter == 0) {
+                break;
+            }
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("Bubble Sort Time: " + (end - start) + " ms");
     }
 
     // Selection Sort
     public static void selectionSort(int[] arr) {
         // TODO: Implement selection sort
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("Selection Sort Time: " + (end - start) + " ms");
     }
 
     // Merge Sort
     public static void mergeSort(int[] arr) {
         // TODO: Implement merge sort
+
     }
 
     private static void mergeSortHelper(int[] arr, int left, int right) {
